@@ -9,7 +9,7 @@ import { STATS } from "@/lib/data";
 export default function Hero() {
   return (
     <section id="home" className="relative bg-navy overflow-hidden">
-      <div className="relative h-[92svh] min-h-[560px] max-h-[860px]">
+      <div className="relative h-[75svh] md:h-[92svh] min-h-[460px] max-h-[860px]">
         <Image
           src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1800&q=80&auto=format"
           alt="Construction engineer supervising an active building site"
@@ -19,7 +19,7 @@ export default function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/55 to-navy/25" />
 
-        <div className="relative z-10 h-full max-w-container mx-auto px-6 md:px-8 flex flex-col justify-end pb-16 md:pb-20">
+        <div className="relative z-10 h-full max-w-container mx-auto px-6 md:px-8 flex flex-col justify-end pb-10 md:pb-20">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
