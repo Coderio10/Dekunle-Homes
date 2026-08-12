@@ -204,6 +204,10 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                     {PROJECT_FILTERS.find((f) => f.value === project.category)?.label}
                   </dd>
                 </div>
+                <div className="flex justify-between border-b border-navy/10 pb-3">
+                  <dt className="text-slate2">Role</dt>
+                  <dd className="text-navy font-medium text-right">{project.role}</dd>
+                </div>
                 <div className="flex justify-between">
                   <dt className="text-slate2">Status</dt>
                   <dd className="text-navy font-medium">{project.status}</dd>

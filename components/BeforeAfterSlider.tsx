@@ -3,7 +3,6 @@
 import type { KeyboardEvent } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 type Props = {
   beforeSrc: string;
@@ -90,13 +89,8 @@ export default function BeforeAfterSlider({
 
   return (
     <div className="space-y-5">
-      <motion.div
+      <div
         ref={trackRef}
-        initial={{ opacity: 0, y: 18, scale: 0.99 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
-        whileHover={{ y: -2 }}
         className="relative overflow-hidden rounded-3xl bg-paper shadow-card"
         style={{ aspectRatio }}
         onPointerDown={handlePointerDown}
@@ -141,7 +135,7 @@ export default function BeforeAfterSlider({
             </span>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {note && <p className="text-[15.5px] leading-[1.8] text-slate2 max-w-3xl">{note}</p>}
     </div>
