@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "./Reveal";
 import SectionHead from "./SectionHead";
 import { PROJECTS, PROJECT_FILTERS } from "@/lib/data";
@@ -47,7 +48,11 @@ export default function Projects() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {visible.map((p, i) => (
             <Reveal key={p.id} delay={(i % 3) * 0.08}>
-              <div className="relative overflow-hidden h-[380px] rounded-2xl group cursor-pointer">
+              <Link
+                href={`/projects/${p.id}`}
+                aria-label={`View details for ${p.name}`}
+                className="relative block overflow-hidden h-[380px] rounded-2xl group cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-gold-soft/40"
+              >
                 <Image
                   src={p.image}
                   alt={p.name}
@@ -64,7 +69,7 @@ export default function Projects() {
                     {p.location} · {PROJECT_FILTERS.find((f) => f.value === p.category)?.label}
                   </span>
                 </div>
-              </div>
+              </Link>
             </Reveal>
           ))}
         </div>

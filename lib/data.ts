@@ -1,6 +1,6 @@
 export const NAV_LINKS = [
   { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
+  { label: "Services", href: "/about#services" },
   { label: "Projects", href: "/projects" },
   { label: "Investment", href: "/investment" },
   { label: "Contact", href: "/contact" },
@@ -96,6 +96,16 @@ export type Project = {
   category: "construction" | "residential" | "commercial" | "management";
   status: "Completed" | "Ongoing" | "Under Construction" | "Under Management";
   image: string;
+  beforeImage: string;
+  afterImage: string;
+  beforeLabel: string;
+  afterLabel: string;
+  beforeAlt: string;
+  afterAlt: string;
+  beforeAfterNote?: string;
+  scopeOfWork?: string[];
+  outcomeStats?: { label: string; value: number; suffix?: string }[];
+  galleryImages?: string[];
 };
 
 export const PROJECTS: Project[] = [
@@ -106,6 +116,25 @@ export const PROJECTS: Project[] = [
     category: "residential",
     status: "Completed",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80&auto=format",
+    beforeImage: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80&auto=format",
+    afterImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80&auto=format",
+    beforeLabel: "Site Before",
+    afterLabel: "Completed",
+    beforeAlt: "Vacant residential site in Lekki before development",
+    afterAlt: "Completed residential estate in Lekki with finished facade",
+    beforeAfterNote:
+      "The site began as undeveloped land with access and drainage to be resolved before any vertical work could start. The finished scheme introduced a coordinated residential layout, improved frontage and a clearer arrival sequence for future occupants.",
+    scopeOfWork: ["Site preparation", "Drainage planning", "Structural build-out", "Facade finishing", "External works"],
+    outcomeStats: [
+      { label: "Units delivered", value: 12 },
+      { label: "Primary blocks", value: 2 },
+      { label: "Delivery stage", value: 100, suffix: "%" },
+    ],
+    galleryImages: [
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=80&auto=format",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80&auto=format",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1200&q=80&auto=format",
+    ],
   },
   {
     id: "dekunle-business-court",
@@ -114,6 +143,24 @@ export const PROJECTS: Project[] = [
     category: "commercial",
     status: "Ongoing",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&auto=format",
+    beforeImage: "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=1600&q=80&auto=format",
+    afterImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80&auto=format",
+    beforeLabel: "Old Site",
+    afterLabel: "Current Build",
+    beforeAlt: "Existing low-rise site in Ikeja before redevelopment",
+    afterAlt: "Commercial building under construction in Ikeja",
+    beforeAfterNote:
+      "The property started as a fragmented low-rise plot with limited frontage efficiency. The current scheme reorganizes the site around a more visible commercial frontage and a stronger internal circulation pattern.",
+    scopeOfWork: ["Demolition and clearing", "Foundation works", "Frame construction", "MEP coordination"],
+    outcomeStats: [
+      { label: "Floors planned", value: 5 },
+      { label: "Current progress", value: 68, suffix: "%" },
+    ],
+    galleryImages: [
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80&auto=format",
+      "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=1200&q=80&auto=format",
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200&q=80&auto=format",
+    ],
   },
   {
     id: "harbour-view-towers",
@@ -122,6 +169,19 @@ export const PROJECTS: Project[] = [
     category: "construction",
     status: "Under Construction",
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&q=80&auto=format",
+    beforeImage: "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?w=1600&q=80&auto=format",
+    afterImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80&auto=format",
+    beforeLabel: "Existing Plot",
+    afterLabel: "Tower in Progress",
+    beforeAlt: "Vacant waterfront plot in Victoria Island before construction",
+    afterAlt: "High-rise tower under construction in Victoria Island",
+    beforeAfterNote:
+      "This plot was cleared for vertical development after the site survey confirmed the footprint could support the intended massing. The build now concentrates on the structural frame, service cores and envelope sequencing.",
+    scopeOfWork: ["Site survey", "Structural frame", "Core construction", "Envelope sequencing"],
+    outcomeStats: [
+      { label: "Tower count", value: 2 },
+      { label: "Construction stage", value: 41, suffix: "%" },
+    ],
   },
   {
     id: "serene-court-villas",
@@ -130,6 +190,19 @@ export const PROJECTS: Project[] = [
     category: "residential",
     status: "Completed",
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=80&auto=format",
+    beforeImage: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80&auto=format",
+    afterImage: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=80&auto=format",
+    beforeLabel: "Vacant Site",
+    afterLabel: "Finished Villas",
+    beforeAlt: "Vacant residential site in Ibeju-Lekki before development",
+    afterAlt: "Completed villa cluster in Ibeju-Lekki",
+    beforeAfterNote:
+      "The project began on a raw land parcel with no usable circulation or services. Delivery focused on turning the site into a coherent villa cluster with defined access, drainage and repeatable unit layouts.",
+    scopeOfWork: ["Land clearing", "Road formation", "Unit construction", "Utilities and drainage"],
+    outcomeStats: [
+      { label: "Villas delivered", value: 8 },
+      { label: "Shared access roads", value: 1 },
+    ],
   },
   {
     id: "parkview-apartments",
@@ -138,6 +211,19 @@ export const PROJECTS: Project[] = [
     category: "management",
     status: "Under Management",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=80&auto=format",
+    beforeImage: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=1600&q=80&auto=format",
+    afterImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80&auto=format",
+    beforeLabel: "Previous State",
+    afterLabel: "Managed Asset",
+    beforeAlt: "Apartment block before structured property management in Ikoyi",
+    afterAlt: "Apartment block under active property management in Ikoyi",
+    beforeAfterNote:
+      "Management began with an asset that needed clearer maintenance routines and a more disciplined tenant experience. The current approach focuses on upkeep, response time and preserving long-term asset value.",
+    scopeOfWork: ["Maintenance scheduling", "Tenant coordination", "Asset reporting"],
+    outcomeStats: [
+      { label: "Units managed", value: 24 },
+      { label: "Response window", value: 24, suffix: "hrs" },
+    ],
   },
   {
     id: "dekunle-corporate-hub",
@@ -146,6 +232,19 @@ export const PROJECTS: Project[] = [
     category: "commercial",
     status: "Ongoing",
     image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=900&q=80&auto=format",
+    beforeImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80&auto=format",
+    afterImage: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&q=80&auto=format",
+    beforeLabel: "Initial Plot",
+    afterLabel: "Corporate Hub",
+    beforeAlt: "Commercial plot in Abuja before development",
+    afterAlt: "Modern commercial building progressing in Abuja",
+    beforeAfterNote:
+      "The site was initially defined by its location rather than by any usable building stock. The current phase is transforming that land into a branded commercial address with a clearer tenant-facing identity.",
+    scopeOfWork: ["Feasibility review", "Site planning", "Frame erection", "Tenant servicing"],
+    outcomeStats: [
+      { label: "Gross floor area", value: 4200, suffix: "sqm" },
+      { label: "Current status", value: 1, suffix: " site" },
+    ],
   },
 ];
 

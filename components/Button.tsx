@@ -31,7 +31,7 @@ export default function Button({
   onClick?: () => void;
   type?: "button" | "submit";
 }) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-full font-semibold text-[14.5px] px-7 min-h-[48px] transition-colors duration-200 ${variantClasses[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 rounded-full font-semibold text-[14.5px] px-7 min-h-[48px] transition-[transform,background-color,border-color,box-shadow] duration-200 ease-brand hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-gold-soft/40 ${variantClasses[variant]} ${className}`;
 
   if (href) {
     return (

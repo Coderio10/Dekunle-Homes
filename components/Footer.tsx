@@ -27,7 +27,7 @@ export default function Footer() {
             <h5 className="text-white font-display text-[14px] mb-5">Company</h5>
             {[
               { label: "About Us", href: "/about" },
-              { label: "Services", href: "/services" },
+              { label: "Services", href: "/about#services" },
               { label: "Projects", href: "/projects" },
               { label: "Investment", href: "/investment" },
             ].map((l) => (
@@ -45,7 +45,7 @@ export default function Footer() {
               "Land Banking",
               "Engineering Consultancy",
             ].map((s) => (
-              <Link key={s} href="/services" className="block text-[14px] py-1.5 text-white/60 hover:text-gold transition-colors">
+              <Link key={s} href="/about#services" className="block text-[14px] py-1.5 text-white/60 hover:text-gold transition-colors">
                 {s}
               </Link>
             ))}
